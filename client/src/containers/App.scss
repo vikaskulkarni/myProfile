@@ -6,16 +6,6 @@
     background: linear-gradient(to right, $dark-grey 0%, $light-grey 100%);
     border-color: $dark-grey;
   }
-
-  .form-card {
-    height: 455px;
-    overflow-y: scroll;
-    background: #ffffff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
-  .form-card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
 }
 
 body {
@@ -27,11 +17,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-.ReactTable {
-  background: #ffffff;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
 .Toastify__toast-container {
   right: 40px;
   top: 40px;
@@ -40,10 +25,4 @@ body {
     border-radius: 5px;
     min-height: 0;
   }
-}
-
-.form-group.required small:after {
-  color: #d00;
-  content: "*";
-  margin-left: 2px;
 }

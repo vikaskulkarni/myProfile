@@ -104,7 +104,6 @@ class FirstLevelHeaderComponent extends Component {
                 ))}
             </ul>
             <span className="navbar-text">
-              <i className={this.state.items.title.class}></i>
               <span className="mx-2">{this.state.items.title.label}</span>
               <i className={`${this.state.items.title.class} cog-rotate mr-4`}></i>
             </span>

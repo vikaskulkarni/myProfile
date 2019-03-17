@@ -1,7 +1,7 @@
 {
-  "name": "Ants",
+  "name": "myProfile",
   "version": "1.0.0",
-  "description": "React client side code for managing Customer Order Shipments",
+  "description": "React client side code for my profile",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",

@@ -1,5 +1,5 @@
 const keys = {
-    dbUri: 'mongodb://customer.order:Customer%40123@ds235711.mlab.com:35711/customerorders'
-  };
-  
-  export const getKeys = key => keys[key];
+  dbUri: 'mongodb://vikas:vikas12@ds157538.mlab.com:57538/details'
+};
+
+export const getKeys = key => keys[key];

@@ -4,7 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import App from './containers/App';
 
 const render = (Component) => {
-  ReactDOM.render(<AppContainer><Component /></AppContainer>, document.getElementById('ants_root'));
+  ReactDOM.render(<AppContainer><Component /></AppContainer>, document.getElementById('profile_root'));
 };
 render(App);
 if (module.hot) {

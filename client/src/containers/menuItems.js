@@ -1,21 +1,21 @@
 const menuItems = {
   header: [
     {
-      title: 'Registry',
+      title: 'Profile',
       default: true,
-      name: 'registry',
+      name: 'profile',
       iconClass: 'fa-th',
 
       children: [
         {
-          title: 'Customer Orders',
-          name: 'orders',
+          title: 'Basic',
+          name: 'basic',
           iconClass: 'fa-list-alt'
         }
       ]
     }
   ],
-  title: { label: 'Ants', class: 'fas fa-cogs' }
+  title: { label: 'Profile', class: 'fas fa-male' }
 };
 
 export default menuItems;

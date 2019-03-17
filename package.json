@@ -1,5 +1,5 @@
 {
-  "name": "ants",
+  "name": "myProfile",
   "version": "1.0.0",
   "description": "Client and Server Modules for Customer Order Management",
   "main": "index.js",
