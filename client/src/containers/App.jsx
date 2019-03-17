@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider } from '@zendeskgarden/react-theming';
+import { Tabs, TabPanel } from '@zendeskgarden/react-tabs';
 import GlobalHeader from '../components/header/GlobalHeader';
 import GlobalFooter from '../components/footer/GlobalFooter';
 import ClientAPIService from '../service/ClientAPIService';
 import menuItems from './menuItems';
+import tabItems from './tabItems';
 import './App.scss';
+import '@zendeskgarden/react-tabs/dist/styles.css';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +20,7 @@ class App extends Component {
     this._clientAPIService = new ClientAPIService();
     this._myProfileURL = '/api/profileDetails/';
   }
-Í
+  Í
   componentWillMount() {
     this.getDataFromServer();
   }
@@ -32,9 +36,6 @@ class App extends Component {
       toast.error('Operation Failed!', {
         autoClose: false
       });
-      this.setState({
-        editMode: false
-      });
     };
 
     this._clientAPIService.setUrl(this._myProfileURL).doGetCall(successCB, errorCB);
@@ -42,14 +43,15 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <GlobalHeader items={this.state.menu} />
-        <div className="containter-fluid app-body">
-          Content
-        </div>
-        <GlobalFooter />
-        <ToastContainer />
-      </React.Fragment>
+      <ThemeProvider>
+        <Tabs vertical>
+          {tabItems.map(tab => (
+            <TabPanel label={tab.label} key={tab.key}>
+              {tab.value}
+            </TabPanel>
+          ))}
+        </Tabs>
+      </ThemeProvider>
     );
   }
 }
