@@ -1,0 +1,14 @@
+.rst__virtualScrollOverride::-webkit-scrollbar {
+  width: 0.7em;
+  background-color: #fff;
+}
+
+.rst__virtualScrollOverride::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#378c98), to(#a3d9e0), color-stop(0.6, #36c7db));
+}
+
+.rst__moveHandle {
+  background-color: #e05038;
+}

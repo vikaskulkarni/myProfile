@@ -1,0 +1,31 @@
+.contactCard {
+  margin: 100px 250px;
+  .btn {
+    margin: 10px 10px 0px 0px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 30px;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .btn-common {
+    background-color: #00bcd4;
+    position: relative;
+    z-index: 1;
+  }
+}

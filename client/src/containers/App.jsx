@@ -1,58 +1,74 @@
-import React, { Component } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { ThemeProvider } from '@zendeskgarden/react-theming';
-import { Tabs, TabPanel } from '@zendeskgarden/react-tabs';
-import GlobalHeader from '../components/header/GlobalHeader';
-import GlobalFooter from '../components/footer/GlobalFooter';
-import ClientAPIService from '../service/ClientAPIService';
-import menuItems from './menuItems';
-import tabItems from './tabItems';
-import './App.scss';
-import '@zendeskgarden/react-tabs/dist/styles.css';
+import React, { Component } from "react";
+import { Auth } from "aws-amplify";
+import { withRouter } from "react-router-dom";
+
+import GlobalHeader from "../components/header/GlobalHeader";
+import GlobalFooter from "../components/footer/GlobalFooter";
+import Routes from "../Routes";
+import "./App.scss";
+import { setCookie } from "../utilities/AppUtility";
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      menu: menuItems
+      isAuthenticated: false,
+      isAuthenticating: true,
+      profileData: {}
     };
-    this._clientAPIService = new ClientAPIService();
-    this._myProfileURL = '/api/profileDetails/';
-  }
-  Í
-  componentWillMount() {
-    this.getDataFromServer();
   }
 
-  getDataFromServer = (id) => {
-    const successCB = (responseData) => {
-      this.setState({
+  async componentDidMount() {
+    try {
+      await Auth.currentSession();
+      this.userHasAuthenticated(true);
+    } catch (e) {
+      if (e !== "No current user") {
+        alert(e);
+      }
+    }
 
-      });
-    };
+    this.setState({ isAuthenticating: false });
+  }
 
-    const errorCB = (error) => {
-      toast.error('Operation Failed!', {
-        autoClose: false
-      });
-    };
+  userHasAuthenticated = authenticated => {
+    this.setState({ isAuthenticated: authenticated });
+  };
 
-    this._clientAPIService.setUrl(this._myProfileURL).doGetCall(successCB, errorCB);
+  profile = profileData => {
+    this.setState({ profileData });
+  };
+
+  handleLogout = async event => {
+    await Auth.signOut();
+
+    this.userHasAuthenticated(false);
+    setCookie("isSkipLogin", "false");
+    this.props.history.push("/login");
   };
 
   render() {
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated,
+      profile: this.profile,
+      profileData: this.state.profileData
+    };
+
     return (
-      <ThemeProvider>
-        <Tabs vertical>
-          {tabItems.map(tab => (
-            <TabPanel label={tab.label} key={tab.key}>
-              {tab.value}
-            </TabPanel>
-          ))}
-        </Tabs>
-      </ThemeProvider>
+      !this.state.isAuthenticating && (
+        <div className="App">
+          <GlobalHeader
+            isAuthenticated={this.state.isAuthenticated}
+            handleLogout={this.handleLogout}
+          />
+          <Routes childProps={childProps} />
+          <GlobalFooter />
+        </div>
+      )
     );
   }
 }
-module.exports = App;
+
+export default withRouter(App);

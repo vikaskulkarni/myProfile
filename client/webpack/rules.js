@@ -31,10 +31,14 @@ const rules = [
     loader: 'file-loader?name=fonts/[name].[ext]',
     include: [join(__dirname, 'src'), join(__dirname, 'node_modules')]
   },
+  // {
+  //   test: /\.(jpg|jpeg|gif|png|ico)(\?.*$|$)$/,
+  //   loader: 'file-loader?name=img/[name].[ext]',
+  //   include: [join(__dirname, 'src'), join(__dirname, 'node_modules')]
+  // }
   {
-    test: /\.(jpg|jpeg|gif|png|ico)(\?.*$|$)$/,
-    loader: 'file-loader?name=img/[name].[ext]',
-    include: [join(__dirname, 'src'), join(__dirname, 'node_modules')]
+    test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+    loader: 'url-loader?limit=100000'
   }
 ];
 module.exports = rules;

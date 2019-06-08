@@ -1,28 +1,3 @@
-@import "../components/_variables.scss";
-
-.app-body {
-  margin: 40px;
-  .btn-primary {
-    background: linear-gradient(to right, $dark-grey 0%, $light-grey 100%);
-    border-color: $dark-grey;
-  }
-}
-
-body {
-  font-family: 'Open Sans', sans-serif !important;
-  font-size: 0.8rem;
-  background: #d9e0e7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.5px;
-}
-
-.Toastify__toast-container {
-  right: 40px;
-  top: 40px;
-  padding: 0;
-  .Toastify__toast {
-    border-radius: 5px;
-    min-height: 0;
-  }
+.App {
+  
 }
