@@ -17,7 +17,7 @@ const About = props => (
         </p>
 
         <p>
-          It is a period of Javascript war. And everybody wants to be a full
+          It is a period of Javascript wars. And everybody wants to be a full
           stack developer
         </p>
 
@@ -80,20 +80,21 @@ const About = props => (
           </a>
         </p>
 
-        <p>
+        <p className="center">
           Last but not the least, the link to this Star War's CSS scrolling
           article is at:
-        </p>
-
-        <p className="center">
           <a href="http://www.sitepoint.com/css3-starwars-scrolling-text/">
             sitepoint.com/
             <br />
             css3-starwars-scrolling-text/
           </a>
+          <br />
+          Finally, the github source for this project is at:
+          <br />
+          <a href="https://github.com/vikaskulkarni/myProfile">
+            vikaskulkarni/myProfile
+          </a>
         </p>
-
-        <p>Finally, the github source for this project is,</p>
       </div>
     </div>
   </div>
