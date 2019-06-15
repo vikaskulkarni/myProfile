@@ -5,6 +5,7 @@ import Amplify from "aws-amplify";
 import App from "./containers/App";
 import config from "./config";
 import "./react-bootstrap-table-all.min.css";
+import "./favicon.ico";
 
 Amplify.configure({
   Auth: {
