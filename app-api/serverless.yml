@@ -14,7 +14,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs12.x
   stage: prod
   region: ap-southeast-1
 
@@ -80,14 +80,14 @@ functions:
           method: delete
           cors: true
           authorizer: aws_iam
-  download:
-    handler: downloadProfile.main
-    events:
-      - http:
-          path: download
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # download:
+  #   handler: downloadProfile.main
+  #   events:
+  #     - http:
+  #         path: download
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 # Create our resources with separate CloudFormation templates
 resources:
   # API Gateway Errors

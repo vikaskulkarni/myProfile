@@ -45,7 +45,7 @@ class GlobalHeader extends Component {
               textAlign: "justify"
             }}
           >
-            13+ years of in-depth experience in End to End Software life cycle
+            14+ years of in-depth experience in End to End Software life cycle
             has made me a result driven, self-motivated and committed
             professional with expertise in both Front end and Backend
             Technologies. My goal is to find a suitable position with Architect,
