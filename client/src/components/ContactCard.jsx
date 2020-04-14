@@ -62,7 +62,7 @@ const ContactCard = props => (
         )}
         {getCookie("isSkipLogin") !== "true" && (
           <a
-            href="https://s3.ap-southeast-1.amazonaws.com/profiles-app/Vikas-Architect_JAVA_REACT_Web_DeveloperACS-13.6yrs.pdf"
+            href="https://profiles-app.s3-ap-southeast-1.amazonaws.com/Vikas_K_Senior_Developer_Java_React.pdf"
             className="btn btn-common"
             target="_blank"
           >
