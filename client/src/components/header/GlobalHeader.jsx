@@ -99,7 +99,7 @@ class GlobalHeader extends Component {
                     <a
                       className="dropdown-item"
                       href="#"
-                      onClick={this.props.handleLogout}
+                      onClick={() => this.props.handleLogout(false)}
                     >
                       Logout
                     </a>
