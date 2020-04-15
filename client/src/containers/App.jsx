@@ -40,12 +40,13 @@ class App extends Component {
     this.setState({ profileData });
   };
 
-  handleLogout = async event => {
+  handleLogout = async isSignup => {
     await Auth.signOut();
 
     this.userHasAuthenticated(false);
     setCookie("isSkipLogin", "false");
-    this.props.history.push("/login");
+    if (isSignup) this.props.history.push("/signup");
+    else this.props.history.push("/login");
   };
 
   render() {
@@ -53,7 +54,8 @@ class App extends Component {
       isAuthenticated: this.state.isAuthenticated,
       userHasAuthenticated: this.userHasAuthenticated,
       profile: this.profile,
-      profileData: this.state.profileData
+      profileData: this.state.profileData,
+      handleLogout: this.handleLogout
     };
 
     return (

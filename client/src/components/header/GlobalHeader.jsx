@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import "./_header.scss";
 import rounded from "./rounded.jpg";
+import { getCookie } from "../../utilities/AppUtility";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -92,14 +93,18 @@ class GlobalHeader extends Component {
                     About this site
                   </a>
                 </LinkContainer>
-                <div className="dropdown-divider" />
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={this.props.handleLogout}
-                >
-                  Logout
-                </a>
+                {getCookie("isSkipLogin") !== "true" && (
+                  <Fragment>
+                    <div className="dropdown-divider" />
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={this.props.handleLogout}
+                    >
+                      Logout
+                    </a>
+                  </Fragment>
+                )}
               </div>
             </li>
           </ul>

@@ -1,15 +1,13 @@
 {
+  "ignoreFiles": ["**/*.js", "**/*.jsx"],
   "extends": "airbnb",
   "env": {
     "browser": true
   },
-  "parser":"babel-eslint",
-  "rules":{
-     "comma-dangle":[
-        "error",
-        "never"
-     ],
-     "no-underscore-dangle":"off",
-     "import/no-extraneous-dependencies": "[error, { devDependencies: true }]"
+  "parser": "babel-eslint",
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "[error, { devDependencies: true }]"
   }
 }

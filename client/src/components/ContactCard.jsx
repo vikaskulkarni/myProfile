@@ -18,6 +18,10 @@ const downloadFile = () => {
   console.log();
 };
 
+const gotoSignUp = props => {
+  props.handleLogout(true);
+};
+
 const ContactCard = props => (
   <div className="contactCard">
     <div className="card flex-row flex-wrap">
@@ -56,9 +60,9 @@ const ContactCard = props => (
           }
         />
         {getCookie("isSkipLogin") === "true" && (
-          <LinkContainer to="/signup">
-            <a href="#">Signup (to see how it works)</a>
-          </LinkContainer>
+          <a href="#" onClick={() => props.handleLogout(true)}>
+            Signup (to see how it works)
+          </a>
         )}
         {getCookie("isSkipLogin") !== "true" && (
           <a
