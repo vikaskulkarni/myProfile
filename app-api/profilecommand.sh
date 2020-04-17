@@ -1,6 +1,6 @@
 npx aws-api-gateway-cli-test \
 --username='kulkarni.vikasdk@gmail.com' \
---password='Password@12' \
+--password='' \
 --user-pool-id='ap-southeast-1_yDCwZzOyY' \
 --app-client-id='7tick5uph5t5f5enjqibpsbaoq' \
 --cognito-region='ap-southeast-1' \

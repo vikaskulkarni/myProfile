@@ -28,7 +28,7 @@ export default class Login extends Component {
 
   handleSkipLogin = event => {
     event.preventDefault();
-    this.processLogin("kulkarni.vikasdk@gmail.com", "Password@12");
+    this.processLogin("kulkarni.vikasdk@gmail.com", "");
     setCookie("isSkipLogin", "true");
   };
 

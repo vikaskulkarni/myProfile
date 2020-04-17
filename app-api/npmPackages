@@ -1,0 +1,3 @@
+npm install --save-dev aws-sdk @babel/core @babel/preset-env @babel/preset-stage-3 babel-loader babel-plugin-source-map-support babel-plugin-transform-runtime serverless-offline serverless-webpack webpack webpack-node-externals
+
+npm install --save babel-runtime source-map-support uuid
